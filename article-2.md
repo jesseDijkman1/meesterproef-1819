@@ -1,14 +1,14 @@
-# Regex - the basics
+# RegEx - the basics
 
 #### Author: Jesse Dijkman
 
-In this article I'll go over the basics of regular expressions; what they are, basic syntax and examples. If you've never written a regular expression and like to start somewhere, this article might be helpful for you. With the help of examples I hope the concept will clear up a bit. At then end I'll write a little program that uses a regular expression.
+In this article I'll go over the basics of regular expressions; what they are, basic syntax and examples. If you've never written a regular expression and like to start somewhere, this article might be helpful for you. With the help of examples I hope the concept will clear up a bit. At the end I'll write a little program that uses a regular expression.
 
-### What are regular expressions
+### What are regular expressions?
 
-> A regular expression (regex or regexp for short) is a special text string for describing a search pattern. You can think of regular expressions as wildcards on steroids.
+> A regular expression (regex or regexp for short) is a special text string for describing a search pattern. You can think of regular expressions as wildcards on steroids - [Source](https://www.regular-expressions.info/)
 
-With regular expressions you can find certain patterns in strings. Like a certain word, a combination of words, numbers, (special) characters.
+With regular expressions you can find certain patterns in strings. Like a certain word, a combination of words, numbers, (special) characters, etc.
 
 A great thing about regular expressions is that almost all programming languages have regular expressions. So when you learn one, you can learn another pretty easily.
 
@@ -18,11 +18,11 @@ In this article I'm going to focus on the JavaScript regular expressions.
 
 **Warning: Regex syntax is scary**
 
-Well, I warned you, so when you have a mental breakdown at the end you can't blame me. Ofcourse I'm joking, but I will say that regular expressions are one of the scariest phenomenons looking at syntax.
+Well, I warned you, so when you have a mental breakdown at the end you can't blame me. Ofcourse I'm joking, but I will say that regular expressions are one of the scarier looking things in programming.
 
 Let's get into the actual syntax of JavaScript regular expressions and how you create one in JavaScript.
 
-In JavaScript you have two ways of creating a regular expression:
+In JavaScript you have two ways of creating a regular expression.
 
 - The literal way
 - The constructor-function way
@@ -39,17 +39,17 @@ const regX = /…/
 const regX = new RegExp("…")
 ```
 
-But for now you just need to focus on the literal way because that's the one you will probably use the most. The constructor way also has it's use cases but I won't discuss those here.
+But for now you just need to focus on the literal way because that's the one you will probably use the most. The constructor way also has it's use cases but I won't discuss those here right now, but I'll use it at the end when I make the little program.
 
 ### Flags
 
-In regular expressions you can use flags. Flags affect the way the regular expression searches through your text. You put flags at the end of the regular expression or as the second parameter of the constructor-function. This looks like the following:
+In regular expressions you can use flags. Flags affect the way the regular expression searches through your text. You put flags at the end of the regular expression or as the second parameter of the constructor-function.
 
 ```js
 const regX = /…/flag
 ```
 
-One of the flags you will probably use the most is the **global flag**; `g`. The global flag tells the regular expression to look for all the matches. When you don't use the global flag, the regular expression will stop its search after the first match. For this article I'm only going to use the global flag.
+One of the flags you will probably use the most is the **global flag**, `g`. The global flag tells the regular expression to look for all the matches. When you don't use the global flag, the regular expression will stop its search after the first match. Two other flags you will see in this article include the **multiline flag** `m` and **case insensitive flag** `i`, but those will be explained later on.
 
 ### Searching specific things
 
@@ -81,11 +81,11 @@ const regX = /like/g
 
 > _I **like** regular expressions_
 
-Well that doesn't look that scary too me.
+See, it's not that hard ... yet.
 
 ### Character classes
 
-When writing regular expressions, most times you'll be using a things called: character classes. Some useful ones are:
+When writing regular expressions, most times you'll be using a things called: **character classes**. Some useful ones are:
 
 - `\w` Select all none special characters
 - `\d` Select all digits
@@ -103,11 +103,11 @@ const regX = /\w/g
 
 > _**I like regular expressions**_
 
-But wait, don't be fooled. It won't select words like this. It will look more like this:
+But wait, don't be fooled. It won't select the words like this yet. It will look more like this:
 
-> _**I l i k e r e g u l a r e x p r e s s i o n s**_
+> _**I &nbsp;&nbsp; l i k e &nbsp;&nbsp; r e g u l a r &nbsp;&nbsp; e x p r e s s i o n s**_
 
-Why this happens is because the regular expression just matches characters that fit the pattern. Because the pattern the matches every non-special character it's going to match them individually. To actually match the words you need a **quantifier**.
+Why this happens is because the regular expression just matches characters that fit the pattern. Because the pattern matches every non-special character it's going to match them individually. To actually match the words you need a **quantifier**.
 
 ### Quantifiers
 
@@ -126,7 +126,7 @@ Using a quantifier for the previous example would look like this:
 const regX = /\w+/g
 ```
 
-Now you get the whole words as matches instead of the characters.
+Now you get the whole words as matches instead of the individual characters.
 
 ### Groups
 
@@ -140,11 +140,9 @@ Say you have a user input for a name, and you have a first and lastname. The exp
 const regX = /(\w+)\s{1}(\w+)/
 ```
 
-This is the basic syntax of a group. You can also backreference to a group in your regular expression (`\1` and `\2`).
-
 ### Multiline and case insensitive flag
 
-A very useful flag that you can use for form validation, data parsing and other things is the mutliline flag `m`. With the multiline flag come two anchors that only work when the multiline flag is declared. The start `^` and end `$` anchor. Another flag that might be useful is the case insensitive flag `i`, which makes the regular expression select words that are capitalized or not.
+A very useful flag that you can use for form validation, data parsing and other things is the **mutliline flag** `m`. The multiline flag comes with two anchors that only work when the multiline flag is declared. The start `^` and end `$` anchor. Another flag that might be useful is the case **insensitive flag** `i`, which makes the regular expression select words where capitalization doesn't matter.
 
 > _Jesse Dijkman_
 
@@ -174,7 +172,7 @@ But this expression will also match the following:
 
 > _**Jesse Dijkman** - professional dumbass_
 
-This might not seem like a problem but when I want to validate this input, I don't want it to match EVERYTHING or nothing at all. This is where the multiline flag and the anchors come in handy. Because I want the expression to find the first two words and then stop so when there are three words it won't match at all. So I need specify a beginning and an ending. Let's add this to our expression.
+This might not seem like a problem but when I want to validate this input, I want it to match EVERYTHING or nothing at all. This is where the multiline flag and the anchors come in handy. Because I want the expression to look for two words on one line. So I need to specify a beginning and an ending. Let's add this to our expression.
 
 ```js
 const regX = /^([a-z]+)\s([a-z]+)$/im
@@ -188,17 +186,13 @@ but will match this:
 
 > _**Jesse Dijkman**_
 
-You can test it out yourself by using [regexr.com](https://regexr.com/)
-
-### JavaScript functions
-
-Okay, we have discussed the basic syntax of regular expressions. But I haven't shown you how you can actually use them in JavaScript. There's list of functions you can use on
+You can test it out yourself by using [regexr.com](https://regexr.com/). Which is a tool I used throughout the minor I followed.
 
 ### Example
 
 Let's create an example that uses a regular expression and the function `replace()`. There are more functions where regular expressions can be used, you can find a list on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Working_with_regular_expressions).
 
-I'm going to make a function that can convert a string to CamelCase. For that I want to add a prototype function to the `String` constructor.
+I'm going to make a function that can convert a string to CamelCase. What I want is to add a prototype function to the `String` constructor. So I can call it directly on a string, just like the `.toUpperCase()` function.
 
 ```js
 String.prototype.toCamelCase = function() {
@@ -206,7 +200,7 @@ String.prototype.toCamelCase = function() {
 }
 ```
 
-Next step is to write the regular expression.
+Next step is to write the regular expression. And get the actual string from the constructor.
 
 ```js
 String.prototype.toCamelCase = function() {
@@ -215,7 +209,7 @@ String.prototype.toCamelCase = function() {
 }
 ```
 
-What this regular expression does is search for whitespaces that are followed by a single character. I grouped the character because I need to return this character in uppercase.
+What this regular expression does is search for whitespaces that are followed by a single character. I grouped the character because I need to replace the whitespace and character with the same character uppercase.
 
 Now let's add the replace function.
 
@@ -228,7 +222,7 @@ String.prototype.toCamelCase = function() {
 }
 ```
 
-When you use replace with a regular expression the first group is the fullmatch and the second is the first group, the third would be the the second group if we had one.
+When you use replace with a regular expression the first group is the fullmatch and the second is the first group.
 
 Now we just need to return the capitalized character.
 
@@ -256,14 +250,20 @@ String.prototype.toCamelCase = function() {
 
 Done!
 
-To summon it all up. We went over the basics of the syntax. Showed some examples and create a function that uses a regular expression.
+To sum it all up. We went over the basics of the syntax. Showed some examples and created a function that uses a regular expression.
 
-I hope this article showed you a glimpse of what you can do with regular expressions. I personally love regular expressions because they're powerful and have a lot of use-cases.
-
-During my minor I used regular expressions for a variety of things, like:
+I personally used regular expressions throughout my minor for a variety of things, like:
 
 - HTML cleaner
 - Markdown parser
 - Extracting cookies (session.id) from websockets
 - Data parsing
 - And probably more
+
+I hope this article showed you a glimpse of what you can do with regular expressions. I personally love regular expressions because they're powerful and have a lot of usecases.
+
+### Sources
+
+- https://regexr.com/
+- https://www.regular-expressions.info/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
