@@ -2,14 +2,14 @@
 
 #### Author: Jesse Dijkman
 
-Did you know that you don't need JavaScript when you have CSS? Ofcourse this isn't serious but there are some use cases where this is true. You probably thought CSS was just for styling, but it can also be used for some functionalities. Two examples where CSS can be used instead of JavaScript are:
+Did you know that you don't need JavaScript when you have CSS? Ofcourse this isn't serious but there are some use cases where this is actually true. You probably thought CSS was just for styling, but it can also be used for some functionalities. Two examples where CSS can be used instead of JavaScript are:
 
 - Dark/Light mode switch
-- Dropdown menus
+- Clickable carousel
 
 These are just two examples, I could imagine a lot more use cases where CSS hacks can make JavaScript obsolete.
 
-Ok, now let's get into the how of it all. First of all, most hacks (that I'm going to show atleast) are achieved use two very cool selectors:
+Ok, now let's get into the how of it all. First of all, most hacks (that I'm going to show atleast) are achieved using one of two very cool selectors:
 
 - `+` **Adjacent sibling combinator**
 - `~` **General sibling combinator**
@@ -29,7 +29,7 @@ Let's say you have the following HTML:
 </section>
 ```
 
-What I want to do now is give all the p elements that follow an h1 a top-border. Do I gave all those p elements a class? No, this is where you can use the adjacent sibling combinator. The adjacent sibling combinator, selects an element that is immediately after another. This will look like this:
+What I want to do now is give all the p elements that follow an h1 a `border-top`. Do I give all those p elements a class? No, this is where you can use the adjacent sibling combinator. The adjacent sibling combinator, selects an element that is immediately after another.
 
 ```css
 h1 + p {
@@ -58,7 +58,7 @@ Let's say you have the following HTML:
 <p>Second p after h1</p>
 ```
 
-What I want to do is select all the p elements the are placed after an h1. But not the ones nested in elements after the h1. This is what the general sibling combinator does. It will select all non-nested siblings.
+What I want to do is select all the p elements the are placed after an h1. But not the ones nested in elements after the h1. This is what the general sibling combinator does. It will select all siblings after an element.
 
 ```css
 h1 ~ p {
@@ -75,7 +75,7 @@ This will affect the following two p elements:
 
 ### Pseudo-classes
 
-If you've ever written more than just a few lines of CSS. You probably know what a pseudo-class is. If it's doesn't ring a bell, than `:hover` might. This is a pseudo-class. Pseudo-classes are used to define the state of an element. Element states might include:
+If you've ever written more than just a few lines of CSS. You probably know what a pseudo-class is. If it doesn't ring a bell, then `:hover` might. This is a pseudo-class. Pseudo-classes are used to define the state of an element. Element states might include:
 
 - `:hover` _The user hovers over an element_
 - `:target` _The user clicks on an element_
@@ -85,7 +85,8 @@ You can find a full list of pseudo-classes on [w3schools](https://www.w3schools.
 
 ### Checkbox trick
 
-Let's look at the `:checked` pseudo-class. What if we combine this with the general sibling combinator? Well, with this combination you get great chemistry. Because now you've created a toggle button that can affect any element of choosing that it preceeds.
+Let's look at the `:checked` pseudo-class. What if we combine this with the general sibling combinator? Well, with this combination you get great chemistry. Because now you've created a toggle button that can affect any element that's placed after it in the DOM.
+
 Take a look at the HTML below.
 
 ```html
@@ -132,19 +133,15 @@ And with the use of a label I can target the checkbox from anywhere in HTML.
 
 By using this as a prefix to other elements you can do a lot. Like make a dark and light mode, which I will get to later.
 
-And a great thing about this trick is that it's supported almsot everywhere. On [caniuse](https://caniuse.com/#search=selectors) it shows you a 98.67% browser support, which is great.
+And a great thing about this trick is that it's supported almost everywhere. On [caniuse](https://caniuse.com/#search=selectors) it shows you a 98.67% browser support, which is great.
 
 ### Visuallyhidden
 
-When you use the checkbox trick, you probably don't want to see the checkbox itself; just the label. When you try to use `display: none` the checkbox trick won't work. Because the checkbox doesn't exist. Do hide the checkbox and not break it, you can use the visuallyhidden trick. How you do it is up to you, I have my way of doing it.
-
-The HTML:
+When you use the checkbox trick, you probably don't want to see the checkbox itself, just the label. When you try to use `display: none` the checkbox trick won't actually work, because the checkbox doesn't exist. To hide the checkbox and not break it, you can use the visuallyhidden trick. How you do it is up to you, I have my way of doing it.
 
 ```html
 <input id="myId" class="visuallyhidden" type="checkbox" />
 ```
-
-The CSS:
 
 ```css
 .visuallyhidden {
@@ -155,7 +152,7 @@ The CSS:
 }
 ```
 
-You can also use this trick to help screenreaders. You could place navigation at the top, so blind users can navigate quickly. The HTML looks like this:
+You can also use this trick to help screenreaders. You could place navigation at the top, so blind users can navigate quickly. Like so:
 
 ```html
 <body>
@@ -169,12 +166,12 @@ You can also use this trick to help screenreaders. You could place navigation at
 
 ### CSS variables
 
-Another great thing CSS has to offer are CSS variables. CSS allows you to create variables that you can use throughout the page, or just on a component. With a browser support of 91.11% I think it's save to use, but that just depends on the use case.
+Another great thing CSS has to offer are CSS variables. CSS allows you to create variables that you can use throughout the page, or just on a component. With a browser support of 91.11% I think it's save to use, but that just depends on the usecase.
 
 You can create and use CSS variables really easily. You can add them to an element and the element its children will have access to it. See below.
 
 ```css
-.article {
+article {
   --variable: red;
   --longer-variable-name: blue;
 }
@@ -189,7 +186,7 @@ You can also define them at the page's root element like so:
 }
 ```
 
-And how you actually use them is also really easy. This is shown below.
+And how you actually use them is also really easy.
 
 ```css
 .article {
@@ -210,10 +207,10 @@ Let say I have three main elements:
 - Article element
 - Footer element
 
-I can write a seperate file for each element, and put them in a components folder. By doing this I can keep my CSS files/code more organized and.
+I can write a seperate file for each element, and put them in a components folder. By doing this I can keep my CSS files/code more organized and make it easier to find certain pieces of code.
 
 ```css
-/* Main.css; the place to import all your modules */
+/* Main.css; the place to import all your css modules */
 @import "components/header.css";
 @import "components/article.css";
 @import "components/article.css";
@@ -221,7 +218,7 @@ I can write a seperate file for each element, and put them in a components folde
 
 ### Example
 
-Earlier in this article I mentioned a dark and light mode. Well we're here. Let's use the things I discusses and make a simple dark and light mode.
+Earlier in this article I mentioned a dark and light mode. Well we're here. Let's use the things I discussed and make a simple dark and light mode.
 
 First the HTML:
 
@@ -309,3 +306,5 @@ header + section {
 ```
 
 Here you go. By just combining the `:checked` pseudo-class and the general sibling selector I can alter the variables in the `#page-wrapper`. [DEMO](https://codepen.io/WillyW/pen/agJoBq?editors=1100)
+
+I hope this article has been useful for you. I know these tricks have been extremely useful for me, I still use them a lot actually. Because it's easy, and has great browser support. One con I think there is, is that you have to write a lot of CSS sometimes, but if you write SCSS I think this problem will disappear.
