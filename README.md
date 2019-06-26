@@ -58,7 +58,9 @@ This week we continued with the setup, and had a meeting with the UX'ers on Mond
 
 On Monday we discussed with the UX'ers what we we're going to test and who would go with whom. Me and Bas went with Johanna and test with Gilbert and his people. Sterre and Robin went with Lisa and Christian to the highschool to test with students.
 
-**\[image\]**
+![Meeting](https://i.imgur.com/X5TOKT9.jpg)
+
+> Meeting with the UX students
 
 When Bas, Johanna and I arrived at Amsterdam southeast for the testing, I was surprised when we met Gilbert; who turned out to be a coach of a walking soccer team. And the test we planned on doing ended up being more of an interview. Which was great, because I never thought about elders using the app. This interview gave us some insights, like why they practice sport:
 
@@ -72,11 +74,17 @@ And why they participate in tournaments:
 
 These insights actually match really well with the concept of the UX'ers. The concept is meant to improve health overall in Amsterdam southeast, it's a platform to meet new people and inspire/learn (from) each other. Also an insight we got from the interview was that browser support is a thing to keep in mind. Because the elders don't really use apps or atleast not like the youth.
 
-After the interview we met with Robin, Sterre, Lisa and Christian at world of foods to discuss the test results. And later in the afternoon we had a meeting with Daan and Vincent; a sports broker who filled in for Harry. During this meeting Vincent told us what he thinks would be important for him to have in the app. Because Vincent meets a lot of people in Amsterdam southeast who want to sport, but have no clue where to look. Vincent could really benefir from a list of clubs and sports.
+![User test photo](https://i.imgur.com/34moKBk.jpg)
+
+> The test with the walking soccer team
+
+After the interview we met with Robin, Sterre, Lisa and Christian at world of foods to discuss the test results. And later in the afternoon we had a meeting with Daan and Vincent; a sports broker who filled in for Harry. During this meeting Vincent told us what he thinks would be important for him to have in the app. Because Vincent meets a lot of people in Amsterdam southeast who want to sport, but have no clue where to look. Vincent could really benefit from a list of clubs and sports.
 
 The rest of the week we worked on the app. Robin worked on the quiz, which was already close to done. And on Friday we had our first talk with Koop; our project coach. During this talk we told him how we felt about testing, and why we thought it was mostly the UX'ers their jobs to do it. He told us that we're CMD students and we also do testing because it's important. But we all just wanted to program and make cool stuff, not do testing. But I get why we also have to do it, since we're from CDM and not ICT. After the meeting/talk we sat down to get our priorities straight. To do this we used a **M**O**SC**O**W** chart (**MUST** have, **SHOULD** have, **COULD** have, **WONT** have)
 
-\[IMAGE\]
+![MoSCoW](https://i.imgur.com/bkKiAp4.jpg)
+
+> **M**O**SC**O**W** chart
 
 In the end I spent most of the week on the `CustomSlider` class, which I made on codepen for easy testing. The point of the `CustomSlider` class was to create custom sliders. The way it works is you have a normal range input that works on every browser and create a custom one on top of it. This way without JavaScript you'd still be able to use the normal range input (progressive enhancement). The `CustomSlider` extends the `DraggingEvent` which I finished the weekend before week 2. This was also the first time I used "closure", which I never understood before this.
 
@@ -128,13 +136,17 @@ function handler(data) {…}
 
 Because Robin was almost done with the quiz Robin and I went to talk to the UX'ers about the quiz and show them what Robin had made so far.
 
-**\[Image\]**
+![Meeting photo](https://i.imgur.com/vkwbWw6.jpg)
+
+> Robin and I with the UX'ers
 
 And later that week Robin and Sterre tested the quiz with students at the HvA campus.
 
 The rest of the week I worked on the `CustomSlider` which I finished, I then started working on a `Carousel` class, also in codepen. Which was on the result page after finishing the quiz on the prototype of the UX'ers.
 
-**\[Screen of results page\]**
+![Carousel on quiz-results page](./readme-assets/quiz-results-page.png)
+
+> Carousel on the results page, after the quiz
 
 The `Carousel` is also a class so it could easily be used on different pages, maybe also on future projects. The `Carousel` was probably the most complicated thing I worked on a while. Because it required math, atleast in the way I wanted to make it. To do this I used an [online tool](https://www.desmos.com/calculator), and I'll be honest ... I spent waaaaay too much time in this tool, because I wanted to get it perfect. But then I remembered that I don't even study maths.
 
@@ -148,13 +160,17 @@ This week we had another meeting (for which we had to prepare on Monday)with Vin
 
 The next day Bas addressed that the code should get some guidelines because the code didn't have any consistency. So we hijacked a classroom where Bas connected his laptop to the bigscreen.
 
-\[image\]
+![Refactor Class](https://i.imgur.com/kiDbAoB.jpg)
+
+> Refactoring on the big screen
 
 To have a bit of consistency in our project' code, we decided to use [prettier](https://prettier.io/). Which is easy to use on VScode I feel like and less easy on Atom. So I installed VScode, and first had to get used to it but ended up liking it a lot.
 
 After discussing the guidelines for the code, we went over the file structure. Because this was also starting to look messy and unorganized.
 
-\[IMAGE\]
+![New Structure](https://i.imgur.com/bbKRkQj.jpg)
+
+> New file structure (credit to Sterre, Bas and Robin)
 
 This was great, because it meant that we we're learning to better work as a group. And to use git better and keep things organized.
 
@@ -213,6 +229,8 @@ So I created a new file were you can choose to fetch a url or a file.
 
 And later that day I added more CSS to the pop-up. Including a new floating-action button with a bell icon that has an animation which I think looks great.
 
-GIF
+![Notification bell animation](./readme-assets/bell-notification-animation.gif)
+
+> The notification bell animation
 
 And the rest of the week just ended up being a lot fixing bugs and on Wednesday we had a presentation to give to Harry (who had just returned from his vacation), Vincent, Daan and one other person.
