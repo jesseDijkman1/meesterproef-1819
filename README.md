@@ -1,26 +1,85 @@
 # meesterproef
 
+##### Student: Jesse Dijkman (500754406)
+
+For the final assessment we picked a case we would work on for five weeks. Bas, Sterre, Robin and I picked: "Sportaanbuid Amsterdam zuid-oost" (sports offer in Amsterdam southeast). In this project we will work together with students from the UX minor.
+
+My teammates are:
+
+- [Bas Pieren](https://github.com/BasPieren)
+- [Sterre van Geest](https://github.com/sterrevangeest)
+- [Robin Stut]](https://github.com/RobinStut)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Stakeholders](#stakeholders)
+- [Context](#context)
+- [Design Decisions](#design-decisions)
+- [Learning Goals](#learning-goals)
+- [Design Rationale](#design-rationale)
+- [Product Biography](#product-biography)
+  - [Week 0](#week-0)
+  - [Week 1](#week-1)
+  - [Week 2](#week-2)
+  - [Week 3](#week-3)
+  - [Week 4](#week-4)
+  - [Week 5](#week-5)
+- [Reflection](#reflection)
+- [Licence](#licence)
+
+## Introduction
+
+In Amsterdam southeast the department of Sports promotion handles the promotion of local sports. This department wants a platform where all the data about sports, clubs and sportevents is present. To make it easier for the people to find a sport that best suits them. [source](https://docs.google.com/document/d/1rGpTHru01Bwv5cI0S_uIRzKIhpin6NFvCFTZ7P1Cdak/edit)
+
+We (the developers) will develop a prototype that can be used for testing purposes. If the client likes the prototype they could hand it over to a professional development agency.
+
+## Stakeholders
+
+1. **The people of Amsterdam southeast:** The main target group for whom the app will be built.
+2. **The sport providers:** The sportproviders play a big part in creating, maintaining their data. They will have access to a dashboard where they can update, add or remove information about their club/organization.
+3. **The sports brokers:** These are the people that help the inhabitants of southeast to find sports. The app will help them by providing a list of clubs and sports.
+
+## Context
+
+The context is different for each stakeholder
+
+For the inhabitants the context is anywhere as long as he/she has his/her smartphone.
+
+For the providers the context is anywhere where they can update, maintain their accounts. Most likely with a laptop or desktop.
+
+For the sports brokers the context is anywhere with an inhabitant of southeast, where they will go through the app together.
+
+## Design Decisions
+
+- Event based (group)
+- Swipe functions (personally)
+
 ## Learning Goals
 
 For this project we had to set learning goals for ourselves. Which I actually found pretty hard to do. Because I just want to program to get better and not really a specific thing. But I actually had some learning goals without realizing it.
 
-##### [Web app from scratch:](https://github.com/cmda-minor-web/web-app-from-scratch-1819)
+##### [Web app from scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819)
 
 > You can create structure in you code by applying patterns
 
 I want to get more familiar with using modules and classes (OOP). So I'm going to try to code mostly using classes.
 
-##### [CSS to the rescue:](https://github.com/cmda-minor-web/css-to-the-rescue-1819)
+##### [CSS to the rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819)
 
 > You understand the broader scope of CSS: You can show that CSS can be used for more than just styling web pages.
 
-I want to use more CSS for a lot of things. This goas hand-in-hand with browser support. Because a lot of cool things you can do with CSS have great browser support.
+I want to use more CSS for a lot of things. This goes hand-in-hand with browser support. Because a lot of cool things you can do with CSS have great browser support.
 
-##### [Browser technologies:](https://github.com/cmda-minor-web/browser-technologies-1819)
+##### [Browser technologies](https://github.com/cmda-minor-web/browser-technologies-1819)
 
 > What is Progressive enhancement en how can you apply it?
 
 I want to create cool looking things that can also can be used/seen on older browsers.
+
+## Design Rationale
+
+The design rationale can be found on [Gitbook](https://meesterproef.gitbook.io/design-rationale/)
 
 ## Product Biography
 
@@ -234,3 +293,36 @@ And later that day I added more CSS to the pop-up. Including a new floating-acti
 > The notification bell animation
 
 And the rest of the week just ended up being a lot fixing bugs and on Wednesday we had a presentation to give to Harry (who had just returned from his vacation), Vincent, Daan and one other person.
+
+## Reflection
+
+For this project I had to state my learning goals. You can read my learning goals [here](#learning-goals)
+
+### [Web app from scratch:](https://github.com/cmda-minor-web/web-app-from-scratch-1819)
+
+One of my learning goals came from web app from scratch. The learning goal was to work more structured by using modules and classes. So that's what I did. The first module I created was on the server. This module was for the routes, where all the routes are placed. On the client I created in total four classes are exported as modules:
+
+- `DraggingEvent`
+- `CustomSlider`
+- `Carousel`
+- `InteractiveCards`
+
+I created these all with the intention to minimize the amount of code. And make it easier to reuse these functionalities. Along the way I also learned about closure, which was a concept that I had trouble with understanding ever since I heard from it.
+
+##### [CSS to the rescue:](https://github.com/cmda-minor-web/css-to-the-rescue-1819)
+
+Another learning goal of mine was to use CSS where ever I could. This was a learning goal that I didn't do much myself. But I showed Robin a way to create a section slider, with just CSS. And the pop-up I created is also with only CSS. Except for certain things that would just be a wast of time to do with CSS.
+
+##### [Browser technologies:](https://github.com/cmda-minor-web/browser-technologies-1819)
+
+My last official learning goal was to use progressive enhancement. Where this return in the code is at the custom slider, and carousel (atleast used to). For the cusotm slider you start with a normal range input, which is used as template for the custom slider class. Data like:
+
+- Minimum & maximum value
+- Default value
+- Steps
+
+are extracted from the range input and used in the generation of the custom slider. The range input is never deleted. It's only visually hidden so a blind user could still use it with his tab key.
+
+## Licence
+
+MIT © [Jesse Dijkman](https://github.com/jesseDijkman1)
