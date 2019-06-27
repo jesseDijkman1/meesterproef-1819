@@ -8,7 +8,7 @@ My teammates are:
 
 - [Bas Pieren](https://github.com/BasPieren)
 - [Sterre van Geest](https://github.com/sterrevangeest)
-- [Robin Stut]](https://github.com/RobinStut)
+- [Robin Stut](https://github.com/RobinStut)
 
 ## Table of Contents
 
