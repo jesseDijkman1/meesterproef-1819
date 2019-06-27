@@ -26,6 +26,7 @@ My teammates are:
   - [Week 4](#week-4)
   - [Week 5](#week-5)
 - [Reflection](#reflection)
+  - [Final Words](#final-words)
 - [Licence](#licence)
 
 ## Introduction
@@ -79,7 +80,7 @@ I want to create cool looking things that can also can be used/seen on older bro
 
 ## Design Rationale
 
-The design rationale can be found on [Gitbook](https://meesterproef.gitbook.io/design-rationale/)
+The design rationale can be found on [Gitbook](https://meesterproef.gitbook.io/design-rationale/).
 
 ## Product Biography
 
@@ -209,6 +210,8 @@ The rest of the week I worked on the `CustomSlider` which I finished, I then sta
 
 The `Carousel` is also a class so it could easily be used on different pages, maybe also on future projects. The `Carousel` was probably the most complicated thing I worked on a while. Because it required math, atleast in the way I wanted to make it. To do this I used an [online tool](https://www.desmos.com/calculator), and I'll be honest ... I spent waaaaay too much time in this tool, because I wanted to get it perfect. But then I remembered that I don't even study maths.
 
+But in the end it worked pretty nice on desktop, it's a bit slow on mobile. [DEMO](https://codepen.io/WillyW/pen/wZebow)
+
 During this week I also had my first code review with [Vasilis](https://github.com/vasilisvg), who I told about my struggle with the `Carousel`. And why I should go to rehab for my codepen addiction. Because codepen is great, but you don't have a commit history. I had a bit of trouble with the code review because I didn't have any questions. I was too busy with programming.
 
 The next day we had a meeting with Koop. With whom we talked about our progress and collaboration with the UX'ers and how this held us back. It became clear to us that we needed to work on our own project and not on theirs. So we made the decision to work on our own twist of the original concept. We went more in a event-based direction, instead of clubs. The main point of this was to encourage people to join try-outs, trainings.
@@ -296,7 +299,7 @@ And the rest of the week just ended up being a lot fixing bugs and on Wednesday 
 
 ## Reflection
 
-For this project I had to state my learning goals. You can read my learning goals [here](#learning-goals)
+For this project I had to state my learning goals. You can read my learning goals [here](#learning-goals). I personally had a lot of trouble with coming up with learning goals. The main thing I wanted to achieve was just to get better at programming. And to achieve this I practiced with modules and classes. I believe that getting used to OOP I will make the transition to languages like Java easier. 
 
 ### [Web app from scratch:](https://github.com/cmda-minor-web/web-app-from-scratch-1819)
 
@@ -315,13 +318,17 @@ Another learning goal of mine was to use CSS where ever I could. This was a lear
 
 ##### [Browser technologies:](https://github.com/cmda-minor-web/browser-technologies-1819)
 
-My last official learning goal was to use progressive enhancement. Where this return in the code is at the custom slider, and carousel (atleast used to). For the cusotm slider you start with a normal range input, which is used as template for the custom slider class. Data like:
+My last official learning goal was to use progressive enhancement. Where this return in the code is at the custom slider, and carousel (atleast used to). For the custom slider you start with a normal range input, which is used as template for the custom slider class. Data like:
 
 - Minimum & maximum value
 - Default value
 - Steps
 
-are extracted from the range input and used in the generation of the custom slider. The range input is never deleted. It's only visually hidden so a blind user could still use it with his tab key.
+are extracted from the range input and used in the generation of the custom slider. The range input is never deleted. It's only visually hidden so a blind user could still use it with his tab key. I also tried to achieve a better browser support for the components that used the `DraggingEvent`, by switching from touch and mouse events to [pointer events](https://caniuse.com/#search=pointer%20events). This way I didn't have to write both the eventlistener for the mouse and touch. But using the pointer events meant that I had to check for safari. I tried to prevent the `CustomSlider` generator from making sliders. But this would clash with the styling and just create a mess.
+
+
+### Final Words 💀
+Overall this project was fun, until the end; where everyone was just exhausted. I really enjoyed working with Bas, Sterre and Robin. 10/10 would recommend this group. A lot of credits go to them. 
 
 ## Sources
 
