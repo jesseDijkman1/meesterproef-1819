@@ -323,6 +323,11 @@ My last official learning goal was to use progressive enhancement. Where this re
 
 are extracted from the range input and used in the generation of the custom slider. The range input is never deleted. It's only visually hidden so a blind user could still use it with his tab key.
 
+## Sources
+
+- UX students (Lisa, Johanna, Ruby, Christian)
+- [Bas Pieren](https://github.com/BasPieren)
+
 ## Licence
 
 MIT © [Jesse Dijkman](https://github.com/jesseDijkman1)
